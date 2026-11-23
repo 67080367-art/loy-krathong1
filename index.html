@@ -1,0 +1,92 @@
+<style>
+  .css-krathong {
+    position: relative;
+    width: 180px;
+    height: 150px;
+    margin: 40px auto;
+  }
+
+  /* เทียน */
+  .css-candle {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 45px;
+    background: linear-gradient(to right, #ffe680, #f4a261);
+    border-radius: 3px;
+    z-index: 2;
+  }
+
+  /* เปลวเทียน */
+  .css-flame {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 16px;
+    background: radial-gradient(circle at bottom, #fff 20%, #ff9f1c 80%);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 15px #ffb703;
+    animation: flameMove 0.4s infinite alternate;
+  }
+
+  @keyframes flameMove {
+    from { transform: translateX(-50%) scale(1); }
+    to { transform: translateX(-50%) scale(1.15); }
+  }
+
+  /* กลีบกระทง */
+  .petals {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    z-index: 3;
+  }
+
+  .petal {
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 42px solid #40916c;
+    border-radius: 50%;
+  }
+
+  .petal:nth-child(2) {
+    border-bottom-color: #52b788;
+    transform: translateY(-6px) scale(1.1);
+  }
+
+  /* ฐานกระทง */
+  .css-base {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 36px;
+    background: linear-gradient(to bottom, #2d6a4f, #1b4332);
+    border-radius: 10px 10px 45px 45px;
+    border-top: 4px solid #74c69d;
+    z-index: 4;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+  }
+</style>
+
+<div class="css-krathong">
+  <div class="css-candle">
+    <div class="css-flame"></div>
+  </div>
+  <div class="petals">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+  <div class="css-base"></div>
+</div>
